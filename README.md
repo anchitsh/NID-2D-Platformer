@@ -1,6 +1,6 @@
 Continuation of the 2D platformer character controller in class.
 
-New things - 
+New things - <br />
 Check for ground<br />
 Coins<br />
 Coin collected UI<br />
