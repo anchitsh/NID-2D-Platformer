@@ -16,7 +16,7 @@ public class Coin : MonoBehaviour
             coinCollected = true;
             sprite.SetActive(false);
             coinAudioSource.Play();
-            collision.gameObject.GetComponent<CharacterController>().coinUI.CoinCollected();
+            //collision.gameObject.GetComponent<CharacterController>().coinUI.CoinCollected();
         }
     }
 }

@@ -54,6 +54,10 @@ public class CharacterController: MonoBehaviour
         {
             transform.localRotation = Quaternion.Euler(0, 0, 0);
         }
+        else
+        {
+            // Do nothing
+        }
     }
 
     private void Jump()
@@ -72,7 +76,6 @@ public class CharacterController: MonoBehaviour
         if (colliders != null)
         {
             isGrounded = true;
-
         }
         else
         {
