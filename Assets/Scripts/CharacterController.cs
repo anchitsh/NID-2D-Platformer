@@ -24,6 +24,8 @@ public class CharacterController: MonoBehaviour
     [Header("Coin UI")]
     public CoinUI coinUI;
 
+    public Animator animator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -33,6 +35,7 @@ public class CharacterController: MonoBehaviour
     {
         horizontalAxis = Input.GetAxisRaw("Horizontal");
         Move();
+        HandleMoveAnimation();
         FlipCharacter();
         CheckIfGrounded();
         Jump();
@@ -42,6 +45,18 @@ public class CharacterController: MonoBehaviour
     {
         Vector2 targetVelocity = new Vector2(horizontalAxis * speed, rb.velocity.y);
         rb.velocity = targetVelocity;
+    }
+
+    private void HandleMoveAnimation()
+    {
+        if(horizontalAxis != 0)
+        {
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
     }
 
     private void FlipCharacter()
